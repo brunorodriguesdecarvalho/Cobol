@@ -1,0 +1,57 @@
+* Microsoft COBOL Version 4.5        L2.4 revision 002 06-Oct-21 26:34 Page   1
+*                                     TRAPEZIO.CBL
+* Options: LIST(TRAPEZIO.LST) ASMLIST(TRAPEZIO.GRP)
+     1 IDENTIFICATION DIVISION.
+     2 PROGRAM-ID.      TRAPEZIO.
+     3 AUTHOR.          BRUNO CARVALHO.
+     4 INSTALLATION.    FATEC-SP.
+     5 DATE-WRITTEN.    10/06/2021.
+     6 DATE-COMPILED. 06-Oct-21 26:34.
+     7 SECURITY.
+     8
+     9 ENVIRONMENT DIVISION.
+    10
+    11 CONFIGURATION SECTION.
+    12 SPECIAL-NAMES.   DECIMAL-POINT IS COMMA.
+    13
+    14 DATA DIVISION.
+    15
+    16 WORKING-STORAGE SECTION.
+    17 77 BASEMA   PIC 9(3).
+    18 77 BASEME   PIC 9(3).
+    19 77 ALTURA   PIC 9(3).
+    20 77 AAREA    PIC 9(6).
+    21
+    22 SCREEN SECTION.
+    23 01 TELA.
+    24
+    25     02 BLANK SCREEN.
+    26     02 LINE 02 COL 21 VALUE "PROGRAMA PARA µREA DO TRAPêZIO".
+    27     02 LINE 05 COL 21 VALUE "ENTRE COM BASE MAIOR: ".
+    28     02 LINE 06 COL 21 VALUE "ENTRE COM BASE MENOR: ".
+    29     02 LINE 07 COL 21 VALUE "ENTRE COM ALTURA: ".
+    30     02 LINE 08 COL 21 VALUE "O CALCULO DA AREA ê:".
+    31
+    32 PROCEDURE DIVISION.
+    33
+    34 INICIO.
+    35     DISPLAY TELA.
+    36
+    37  DIGITACAO.
+    38     ACCEPT BASEMA AT 0550.
+    39     ACCEPT BASEME AT 0650.
+    40     ACCEPT ALTURA AT 0750.
+    41
+    42  CALCULO.
+    43     COMPUTE AAREA = ( (BASEMA+BASEME) *ALTURA) /2.
+    44
+    45  EXIBE-RESULTADO.
+    46     DISPLAY AAREA AT 0850.
+    47     DISPLAY "FINAL DO PROGRAMA - µREA DO TRIAPêZIO" AT 1021.
+    48     STOP RUN.
+* Microsoft COBOL Version 4.5        L2.4 revision 002
+* (C)Copyright Microsoft Corp 1984, 1991       URN AXUPA/MS0/000000
+*                                              REF GNB-024050002A7
+*
+* Total Messages:     0
+* Data:         828     Code:         195     Dictionary:        1440

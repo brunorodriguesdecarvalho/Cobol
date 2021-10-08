@@ -1,0 +1,54 @@
+* Microsoft COBOL Version 4.5        L2.4 revision 002 06-Oct-21 26:28 Page   1
+*                                     TRIANGUL.CBL
+* Options: LIST(TRIANGUL.LST) ASMLIST(TRIANGUL.GRP)
+     1 IDENTIFICATION DIVISION.
+     2 PROGRAM-ID.      TRIANGULO.
+     3 AUTHOR.          BRUNO CARVALHO.
+     4 INSTALLATION.    FATEC-SP.
+     5 DATE-WRITTEN.    10/06/2021.
+     6 DATE-COMPILED. 06-Oct-21 26:28.
+     7 SECURITY.
+     8
+     9 ENVIRONMENT DIVISION.
+    10
+    11 CONFIGURATION SECTION.
+    12 SPECIAL-NAMES.   DECIMAL-POINT IS COMMA.
+    13
+    14 DATA DIVISION.
+    15
+    16 WORKING-STORAGE SECTION.
+    17 77 LARGURA  PIC 9(3).
+    18 77 ALTURA   PIC 9(3).
+    19 77 AAREA    PIC 9(6).
+    20
+    21 SCREEN SECTION.
+    22 01 TELA.
+    23
+    24     02 BLANK SCREEN.
+    25     02 LINE 02 COL 21 VALUE "PROGRAMA PARA µREA DO TRI∂NGULO".
+    26     02 LINE 05 COL 21 VALUE "ENTRE COM LARGURA: ".
+    27     02 LINE 06 COL 21 VALUE "ENTRE COM ALTURA: ".
+    28     02 LINE 07 COL 21 VALUE "O CALCULO DA AREA ê:".
+    29
+    30 PROCEDURE DIVISION.
+    31
+    32 INICIO.
+    33     DISPLAY TELA.
+    34
+    35  DIGITACAO.
+    36     ACCEPT LARGURA AT 0550.
+    37     ACCEPT ALTURA AT 0650.
+    38
+    39  CALCULO.
+    40     COMPUTE AAREA = (LARGURA*ALTURA) /2.
+    41
+    42  EXIBE-RESULTADO.
+    43     DISPLAY AAREA AT 0750.
+    44     DISPLAY "FINAL DO PROGRAMA - µREA DO TRI∂NGULO" AT 1021.
+    45     STOP RUN.
+* Microsoft COBOL Version 4.5        L2.4 revision 002
+* (C)Copyright Microsoft Corp 1984, 1991       URN AXUPA/MS0/000000
+*                                              REF GNB-024050002A7
+*
+* Total Messages:     0
+* Data:         788     Code:         176     Dictionary:        1264

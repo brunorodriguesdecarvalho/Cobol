@@ -1,0 +1,52 @@
+* Microsoft COBOL Version 4.5        L2.4 revision 002 06-Oct-21 26:37 Page   1
+*                                     MOTOAPP.CBL
+* Options: LIST(MOTOAPP.LST) ASMLIST(MOTOAPP.GRP)
+     1 IDENTIFICATION DIVISION.
+     2 PROGRAM-ID.      MOTOAPP.
+     3 AUTHOR.          BRUNO CARVALHO.
+     4 INSTALLATION.    FATEC-SP.
+     5 DATE-WRITTEN.    10/06/2021.
+     6 DATE-COMPILED. 06-Oct-21 26:37.
+     7 SECURITY.
+     8
+     9 ENVIRONMENT DIVISION.
+    10
+    11 CONFIGURATION SECTION.
+    12 SPECIAL-NAMES.   DECIMAL-POINT IS COMMA.
+    13
+    14 DATA DIVISION.
+    15
+    16 WORKING-STORAGE SECTION.
+    17 77 BASE  PIC 9(4)V99 VALUE ZEROS.
+    18 77 KM    PIC 9(2)V99 VALUE ZEROS.
+    19 77 TOT   PIC 9(3)V99 VALUE ZEROS.
+    20
+    21 SCREEN SECTION.
+    22 01 TELA.
+    23
+    24     02 BLANK SCREEN.
+    25     02 LINE 02 COL 21 VALUE "PROGRAMA PARA MOTORISTA DE APP".
+    26     02 LINE 05 COL 21 VALUE "ENTRE COM KM TOTAL: ".
+    27     02 LINE 06 COL 21 VALUE "VALOR TOTAL DA CORRIDA: ".
+    28
+    29 PROCEDURE DIVISION.
+    30
+    31 INICIO.
+    32     DISPLAY TELA.
+    33
+    34  DIGITACAO.
+    35     ACCEPT KM AT 0550.
+    36
+    37  CALCULO.
+    38     COMPUTE TOT = 5+ (4,50 * KM) .
+    39
+    40  EXIBE-RESULTADO.
+    41     DISPLAY TOT AT 0650.
+    42     DISPLAY "FINAL DO PROGRAMA - CUSTO DO CARRO" AT 1021.
+    43     STOP RUN.
+* Microsoft COBOL Version 4.5        L2.4 revision 002
+* (C)Copyright Microsoft Corp 1984, 1991       URN AXUPA/MS0/000000
+*                                              REF GNB-024050002A7
+*
+* Total Messages:     0
+* Data:         764     Code:         172     Dictionary:        1131
